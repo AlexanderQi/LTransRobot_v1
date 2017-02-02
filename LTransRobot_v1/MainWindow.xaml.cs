@@ -21,7 +21,7 @@ namespace LTransRobot_v1
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ILog log; //log配置初始化在APP.XAML.CS中
+        private ILog log; //复制此代码时注意： log配置加载代码在App.Xaml.cs中或App.cs中
         public MainWindow()
         {
 
