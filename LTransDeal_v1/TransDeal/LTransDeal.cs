@@ -8,6 +8,8 @@ using System.Web.Security;
 using System.IO;
 using log4net;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
 
 namespace LTransDeal_v1
 {
@@ -49,7 +51,6 @@ namespace LTransDeal_v1
         {
             url = getTransUrl(info);
             //log.Debug("RequestUrl = "+url);
-
             try
             {
                 WebRequest request = WebRequest.Create(url);
@@ -61,7 +62,13 @@ namespace LTransDeal_v1
                 {
                     r = sr.ReadToEnd();
                 }
-                return r;
+                //{ "from":"en","to":"zh","trans_result":[{"src":"you are welcome.","dst":"\u4e0d\u5ba2\u6c14."}]}
+
+                JObject jo = (JObject)JsonConvert.DeserializeObject(r);
+                JArray ja = (JArray)jo["trans_result"];
+                string result = ja[0]["dst"].ToString();
+                result = System.Web.HttpUtility.UrlDecode(result, Encoding.UTF8);
+                return result;
             }
             catch (Exception)
             {

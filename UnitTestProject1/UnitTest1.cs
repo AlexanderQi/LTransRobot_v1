@@ -24,7 +24,7 @@ namespace UnitTestProject1
         public void TestMethod2()
         {
 
-            string str = LTransDeal.getTransResult("you are welcome.");
+            string str = LTransDeal.getTransResult("even the most well regarded writing since then has sought to capture spoken English on the page.");
             Console.WriteLine(LTransDeal.url);
             Console.WriteLine(str);
         }
