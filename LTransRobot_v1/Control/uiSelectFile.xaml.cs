@@ -57,16 +57,23 @@ namespace LTransRobot_v1.Control
                 doc = wordapp.Documents.Open(source_fn);
                 int pc = doc.Paragraphs.Count;
                 int sc = doc.Sentences.Count;
-                int sec = doc.Sections.Count;
+                
                 showinfo("段落总数：" + pc);
                 showinfo("句子总数：" + sc);
-                showinfo("章节总数：" + sec);
+               
 
                 showinfo("示例");
                 int n = pc > 100 ? 100 : pc;
                 StringBuilder sb = new StringBuilder();
                 for (int i = 1; i < n; i++)
-                    sb.Append(doc.Sentences[i].Text);
+                {
+                    string s = doc.Sentences[i].Text;
+                    sb.Append(s);
+
+
+                }
+                    
+
                 showinfo(sb.ToString());
             }
             catch (Exception ex)

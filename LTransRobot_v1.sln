@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LTransRobot_v1", "LTransRobot_v1\LTransRobot_v1.csproj", "{81592B42-9049-4C8F-84E1-59673EBFE3C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LTransDeal_v1", "LTransDeal_v1\LTransDeal_v1.csproj", "{470B68F5-3E1B-4EEC-94B9-2C92C508C2A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{EF9B0F26-13C5-4A53-B15F-85FD833CDDB3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{81592B42-9049-4C8F-84E1-59673EBFE3C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81592B42-9049-4C8F-84E1-59673EBFE3C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81592B42-9049-4C8F-84E1-59673EBFE3C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{470B68F5-3E1B-4EEC-94B9-2C92C508C2A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{470B68F5-3E1B-4EEC-94B9-2C92C508C2A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{470B68F5-3E1B-4EEC-94B9-2C92C508C2A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{470B68F5-3E1B-4EEC-94B9-2C92C508C2A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF9B0F26-13C5-4A53-B15F-85FD833CDDB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF9B0F26-13C5-4A53-B15F-85FD833CDDB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF9B0F26-13C5-4A53-B15F-85FD833CDDB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF9B0F26-13C5-4A53-B15F-85FD833CDDB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
