@@ -9,6 +9,7 @@ using System.IO;
 using log4net;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Windows.Forms;
 
 
 namespace LTransDeal_v1
@@ -66,15 +67,23 @@ namespace LTransDeal_v1
 
                 JObject jo = (JObject)JsonConvert.DeserializeObject(r);
                 JArray ja = (JArray)jo["trans_result"];
-                string result = ja[0]["dst"].ToString();
-                result = System.Web.HttpUtility.UrlDecode(result, Encoding.UTF8);
-                return result;
+                JToken jt = ja[0]["dst"];
+                if (jt != null)
+                {
+                    string result = jt.ToString();
+                    result = System.Web.HttpUtility.UrlDecode(result, Encoding.UTF8);
+                    return result;
+                }
+                else
+                    return null;
+            
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                //MessageBox.Show(ex.Message);
+                return ex.Message + " info: "+info;
             }
+
         }
 
     }

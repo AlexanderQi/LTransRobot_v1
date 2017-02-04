@@ -137,6 +137,12 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LTransDeal_v1\LTransDeal_v1.csproj">
+      <Project>{470b68f5-3e1b-4eec-94b9-2c92c508c2a5}</Project>
+      <Name>LTransDeal_v1</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

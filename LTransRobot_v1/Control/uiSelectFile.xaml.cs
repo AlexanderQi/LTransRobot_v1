@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using log4net;
 using Microsoft.Win32;
 using Word = Microsoft.Office.Interop.Word;
+using LTransDeal_v1;
 
 namespace LTransRobot_v1.Control
 {
@@ -50,6 +51,11 @@ namespace LTransRobot_v1.Control
 
         private void ReadDoc()
         {
+            //if (dest_file.Equals(""))
+            //{
+            //    MessageBox.Show("结果保存文件未设置");
+            //    return;
+            //}
             Word.Application wordapp = new Word.Application();
             Word.Document doc = null;
             try
@@ -63,14 +69,20 @@ namespace LTransRobot_v1.Control
                
 
                 showinfo("示例");
-                int n = pc > 100 ? 100 : pc;
+                int n = pc > 50 ? 50 : pc;
+
                 StringBuilder sb = new StringBuilder();
                 for (int i = 1; i < n; i++)
                 {
-                    string s = doc.Sentences[i].Text;
-                    sb.Append(s);
-
-
+                    string s = doc.Paragraphs[i].Range.Text;
+                    //if (s == null||s.Equals("")) continue;
+                    //sb.Append(s);
+                    s = s.Trim().Replace("\a", "").Replace("\r","").Replace("\n", "");
+                    if (s.Equals("")) continue;
+                    sb.Append(s + "\n");
+                    s = LTransDeal_v1.LTransDeal.getTransResult(s);
+                    //if (s == null) continue;
+                    sb.Append(s+"\n");
                 }
                     
 
