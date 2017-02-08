@@ -35,12 +35,12 @@ namespace UnitTestProject1
 
             string str = "123.123";
             string str2 = "123,123";
-            string str3 = "+123,123.456";
-            string str4 = " +55.88%";
+            string str3 = "+123,121,123.456";
+            string str4 = "+55.88%";
             string str5 = "-66.11%";
             string str6 = "-123asdss";
 
-            Regex reg = new Regex(@"^([+-]|\b)\d*,*\d*\.*\d*%?$");
+            Regex reg = new Regex(@"^([+-]|\b)(\d*,)*\d+\.*\d*%?$");
             Match ma = reg.Match(str);
             if (ma.Success)
                 Console.WriteLine(ma.Value);
