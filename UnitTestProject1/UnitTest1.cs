@@ -33,36 +33,33 @@ namespace UnitTestProject1
         public void TestMethod3()
         {
 
-            //string str = "123.123";
-            //string str2 = "123,123";
-            //string str3 = "123,123.456";
-            //string str4 = "123.123.456.123";
-            //string str5 = "fffaa";
+            string str = "123.123";
+            string str2 = "123,123";
+            string str3 = "+123,123.456";
+            string str4 = " +55.88%";
+            string str5 = "-66.11%";
+            string str6 = "-123asdss";
 
-            //Regex reg = new Regex(@"\d*\.,");
-            //Match ma = reg.Match(str);
-            //if(ma.Success)
-            //    Console.WriteLine(ma.)
+            Regex reg = new Regex(@"^([+-]|\b)\d*,*\d*\.*\d*%?$");
+            Match ma = reg.Match(str);
+            if (ma.Success)
+                Console.WriteLine(ma.Value);
+            ma = reg.Match(str2);
+            if (ma.Success)
+                Console.WriteLine(ma.Value);
+            ma = reg.Match(str3);
+            if (ma.Success)
+                Console.WriteLine(ma.Value);
+            ma = reg.Match(str4);
+            if (ma.Success)
+                Console.WriteLine(ma.Value);
+            ma = reg.Match(str5);
+            if (ma.Success)
+                Console.WriteLine(ma.Value);
+            ma = reg.Match(str6);
+            if (ma.Success)
+                Console.WriteLine(ma.Value);
 
-            // Define a regular expression for repeated words.
-            Regex rx = new Regex(@"\b(?<word>\w+)\s+(\k<word>)\b", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-
-            // Define a test string.        
-            string text = "The the quick brown fox  fox jumped over the lazy dog dog.";
-
-            // Find matches.
-            MatchCollection matches = rx.Matches(text);
-
-            // Report the number of matches found.
-            Console.WriteLine("{0} matches found.", matches.Count);
-
-            // Report on each match.
-            foreach (Match match in matches)
-            {
-                string word = match.Groups["word"].Value;
-                int index = match.Index;
-                Console.WriteLine("{0} repeated at position {1}", word, index);
-            }
         }
     }
 }
